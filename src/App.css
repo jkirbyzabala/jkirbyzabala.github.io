@@ -1,0 +1,39 @@
+.default-button {
+    background-color: #f6e0b5;
+    border: none;
+    border-radius: 5px;
+    color: #66545e;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .default-button:hover {
+    background-color: #eea990;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .custom-button {
+    background-color: #aa6f73; /* Pokémon Trainer sets a custom button color */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .custom-button:hover {
+    background-color: #66545e; /* Pokémon Trainer sets a custom hover color */
+  }
+  
+  .custom-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
