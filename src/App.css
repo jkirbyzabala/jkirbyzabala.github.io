@@ -1,39 +1,35 @@
-.default-button {
-    background-color: #f6e0b5;
-    border: none;
-    border-radius: 5px;
-    color: #66545e;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-  }
-  
-  .default-button:hover {
-    background-color: #eea990;
-  }
-  
-  .button-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .custom-button {
-    background-color: #aa6f73; /* Pokémon Trainer sets a custom button color */
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-  }
-  
-  .custom-button:hover {
-    background-color: #66545e; /* Pokémon Trainer sets a custom hover color */
-  }
-  
-  .custom-container {
+.custom-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
+  
+  .custom-button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* I style the buttons for each Pokémon type */
+  .all { background-color: grey; color: white; }
+  .normal { background-color: #A8A77A; color: white; }
+  .fire { background-color: #EE8130; color: white; }
+  .water { background-color: #6390F0; color: white; }
+  .electric { background-color: #F7D02C; color: white; }
+  .grass { background-color: #7AC74C; color: white; }
+  .ice { background-color: #96D9D6; color: white; }
+  .fighting { background-color: #C22E28; color: white; }
+  .poison { background-color: #A33EA1; color: white; }
+  .ground { background-color: #E2BF65; color: white; }
+  .flying { background-color: #A98FF3; color: white; }
+  .psychic { background-color: #F95587; color: white; }
+  .bug { background-color: #A6B91A; color: white; }
+  .rock { background-color: #B6A136; color: white; }
+  .ghost { background-color: #735797; color: white; }
+  .dragon { background-color: #6F35FC; color: white; }
+  .dark { background-color: #705746; color: white; }
+  .steel { background-color: #B7B7CE; color: white; }
+  .fairy { background-color: #D685AD; color: white; }
   
