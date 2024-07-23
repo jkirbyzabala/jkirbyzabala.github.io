@@ -1,35 +1,49 @@
-body {
-    font-family: 'Nunito', sans-serif;
-  }
-  
-  .app {
-    background-color: #FEF3E2; /* Updated background color */
-    color: #606676; /* Updated text color */
-    padding: 20px;
-  }
-  
-  .team {
+.team {
     border: 2px solid #BEC6A0; /* Updated border color */
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;
+    background-color: #FEF3E2; /* Updated background color */
   }
   
-  h1, h2, h3 {
-    color: #606676; /* Updated header color */
+  .team-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows Pokémon to wrap to the next line if needed */
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
   
-  button {
-    background-color: #BEC6A0; /* Updated button background color */
-    color: #FEF3E2; /* Updated button text color */
+  .team-list li {
+    display: flex;
+    align-items: center;
+    border: 1px solid #BEC6A0; /* Updated border color */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #F6EEC9; /* Updated background color */
+    position: relative; /* For positioning the remove button */
+  }
+  
+  .team-list img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #EE4E4E; /* Button color */
+    color: #FEF3E2; /* Button text color */
     border: none;
-    padding: 10px 20px;
+    padding: 5px;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
   }
   
-  button:hover {
-    background-color: #EE4E4E; /* Updated hover color */
+  .remove-button:hover {
+    background-color: #D53F6E; /* Hover color */
   }
   
