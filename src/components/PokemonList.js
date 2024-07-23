@@ -1,7 +1,6 @@
 import React from 'react';
 
 function PokemonList({ pokemonList, addToTeam }) {
-  // I render the list of Pokémon
   return (
     <div>
       <h2>Available Pokémon</h2>
