@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
 import TypeButtons from './components/TypeButtons';
-import PokemonList from '.components/PokemonList';
+import PokemonList from './components/PokemonList';
 import GenerationFilter from './components/GenerationFilter';
 import './App.css';
 
