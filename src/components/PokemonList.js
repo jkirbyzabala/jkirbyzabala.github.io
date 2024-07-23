@@ -1,4 +1,5 @@
 import React from 'react';
+import './PokemonList.css';
 
 const PokemonList = ({ pokemonList, addToTeam }) => {
   return (

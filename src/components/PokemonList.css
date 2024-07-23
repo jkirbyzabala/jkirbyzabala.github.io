@@ -1,0 +1,13 @@
+/* Style the Pokémon list */
+.pokemon-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pokemon-list li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
