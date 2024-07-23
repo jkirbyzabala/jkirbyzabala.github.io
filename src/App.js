@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from './Header';
-import TypeButtons from './TypeButtons';
-import PokemonList from './PokemonList';
-import GenerationFilter from './GenerationFilter';
+import Header from './components/Header';
+import TypeButtons from './components/TypeButtons';
+import PokemonList from '.components/PokemonList';
+import GenerationFilter from './components/GenerationFilter';
 import './App.css';
 
 function App() {
