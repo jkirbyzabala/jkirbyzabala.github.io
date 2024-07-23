@@ -1,23 +1,25 @@
 import React from 'react';
+import './TypeButtons.css';
 
-function TypeButtons({ types, setPokemonType, buttonClassName, containerClassName }) {
+function TypeButtons({ types, setPokemonType }) {
   return (
-    <div className={containerClassName}>
-      <button
-        className={`${buttonClassName} all`}
-        onClick={() => setPokemonType('all')}
-      >
-        All
-      </button>
-      {types.map((type, index) => (
+    <div className="custom-container">
+      {types.map((type) => (
         <button
-          key={index}
-          className={`${buttonClassName} ${type.name}`}
+          key={type.name}
+          className={`custom-button ${type.name}`}
           onClick={() => setPokemonType(type.name)}
         >
           {type.name}
         </button>
       ))}
+      <button
+        key="all"
+        className="custom-button all"
+        onClick={() => setPokemonType('all')}
+      >
+        All
+      </button>
     </div>
   );
 }

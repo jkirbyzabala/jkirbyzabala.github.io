@@ -1,63 +1,35 @@
-.app {
-    background-color: black;
-    color: white;
+body {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .app {
+    background-color: #FEF3E2; /* Updated background color */
+    color: #606676; /* Updated text color */
     padding: 20px;
-    min-height: 100vh;
-  }
-  
-  .custom-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .custom-button {
-    padding: 10px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    color: white;
-    text-transform: capitalize;
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   
   .team {
+    border: 2px solid #BEC6A0; /* Updated border color */
+    padding: 20px;
     margin: 20px 0;
+    border-radius: 8px;
   }
   
-  .team-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
+  h1, h2, h3 {
+    color: #606676; /* Updated header color */
   }
   
-  .team-list li {
-    margin-right: 10px;
+  button {
+    background-color: #BEC6A0; /* Updated button background color */
+    color: #FEF3E2; /* Updated button text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
   }
   
-  /* Example type button styles */
-  .all { background-color: grey; }
-  .normal { background-color: #A8A77A; }
-  .fire { background-color: #EE8130; }
-  .water { background-color: #6390F0; }
-  .electric { background-color: #F7D02C; }
-  .grass { background-color: #7AC74C; }
-  .ice { background-color: #96D9D6; }
-  .fighting { background-color: #C22E28; }
-  .poison { background-color: #A33EA1; }
-  .ground { background-color: #E2BF65; }
-  .flying { background-color: #A98FF3; }
-  .psychic { background-color: #F95587; }
-  .bug { background-color: #A6B91A; }
-  .rock { background-color: #B6A136; }
-  .ghost { background-color: #735797; }
-  .dragon { background-color: #6F35FC; }
-  .dark { background-color: #705746; }
-  .steel { background-color: #B7B7CE; }
-  .fairy { background-color: #D685AD; }
+  button:hover {
+    background-color: #EE4E4E; /* Updated hover color */
+  }
   

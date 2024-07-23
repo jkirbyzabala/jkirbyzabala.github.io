@@ -1,0 +1,10 @@
+/* Style the "My Team" section */
+.my-team {
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  

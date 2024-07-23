@@ -1,31 +1,29 @@
 import React from 'react';
 
-function GenerationFilter({ generations, selectedGenerations, setSelectedGenerations }) {
-  const handleCheckboxChange = (generationName) => {
-    if (selectedGenerations.includes(generationName)) {
-      setSelectedGenerations(selectedGenerations.filter(g => g !== generationName));
-    } else {
-      setSelectedGenerations([...selectedGenerations, generationName]);
-    }
+const GenerationFilter = ({ generations, selectedGenerations, setSelectedGenerations }) => {
+  const handleGenerationChange = (e) => {
+    const generation = e.target.value;
+    setSelectedGenerations(prev => 
+      prev.includes(generation) ? prev.filter(g => g !== generation) : [...prev, generation]
+    );
   };
 
   return (
     <div>
-      <h2>Filter by Generation</h2>
-      <div>
-        {generations.map((generation, index) => (
-          <label key={index}>
-            <input
-              type="checkbox"
-              checked={selectedGenerations.includes(generation.name)}
-              onChange={() => handleCheckboxChange(generation.name)}
-            />
-            {generation.name}
-          </label>
-        ))}
-      </div>
+      <h3>Filter by Generation</h3>
+      {generations.map(generation => (
+        <label key={generation.name}>
+          <input
+            type="checkbox"
+            value={generation.name}
+            checked={selectedGenerations.includes(generation.name)}
+            onChange={handleGenerationChange}
+          />
+          {generation.name}
+        </label>
+      ))}
     </div>
   );
-}
+};
 
 export default GenerationFilter;

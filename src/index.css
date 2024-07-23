@@ -1,29 +1,24 @@
-
 body {
     font-family: 'Nunito', sans-serif;
   }
   
-  /* Define the color palette */
-:root {
-    --bg-color: #F9F8F7;
-    --primary-color: #DE8AAB;
-    --secondary-color: #7C2A47;
-    --accent-color: #D53F6E;
-    --text-color: #342547;
+  :root {
+    --bg-color: #FEF3E2;
+    --primary-color: #BEC6A0;
+    --secondary-color: #708871;
+    --accent-color: #606676;
+    --text-color: #606676;
   }
   
-  /* Apply the background color */
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
   }
   
-  /* Customize the main container */
   .main-container {
     padding: 20px;
   }
   
-  /* Style the "My Team" section with a border */
   .my-team {
     border: 2px solid var(--primary-color);
     padding: 20px;
@@ -31,12 +26,10 @@ body {
     border-radius: 8px;
   }
   
-  /* Style headers */
   h1, h2, h3 {
     color: var(--text-color);
   }
   
-  /* Style buttons for consistency */
   button {
     background-color: var(--secondary-color);
     color: var(--bg-color);
