@@ -15,10 +15,15 @@
   .custom-button {
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     cursor: pointer;
     color: white;
     text-transform: capitalize;
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .team {
