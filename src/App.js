@@ -1,52 +1,68 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // I import Axios for HTTP requests
-import Header from './components/Header';
-import TypeButtons from './components/TypeButtons';
-import PokemonList from './components/PokemonList';
-import './App.css'; 
+import axios from 'axios';
+import Header from './Header';
+import TypeButtons from './TypeButtons';
+import PokemonList from './PokemonList';
+import GenerationFilter from './GenerationFilter';
+import './App.css';
 
 function App() {
   const [pokemonType, setPokemonType] = useState('all');
   const [pokemonList, setPokemonList] = useState([]);
   const [team, setTeam] = useState([]);
   const [types, setTypes] = useState([]);
+  const [generations, setGenerations] = useState([]);
+  const [selectedGenerations, setSelectedGenerations] = useState([]);
 
   useEffect(() => {
-    // I fetch the list of Pokémon types using Axios
     axios.get('https://pokeapi.co/api/v2/type/')
       .then(response => setTypes(response.data.results))
       .catch(error => console.error('Error fetching Pokémon types:', error));
+
+    axios.get('https://pokeapi.co/api/v2/generation/')
+      .then(response => setGenerations(response.data.results))
+      .catch(error => console.error('Error fetching generations:', error));
   }, []);
 
   useEffect(() => {
-    // I fetch Pokémon based on the selected type using Axios
-    const url = pokemonType === 'all'
-      ? 'https://pokeapi.co/api/v2/pokemon?limit=1000'
-      : `https://pokeapi.co/api/v2/type/${pokemonType}/`;
+    let url = 'https://pokeapi.co/api/v2/pokemon?limit=1000';
+    
+    if (pokemonType !== 'all') {
+      url = `https://pokeapi.co/api/v2/type/${pokemonType}/`;
+    }
 
     axios.get(url)
       .then(response => {
-        const pokemons = pokemonType === 'all'
+        const fetchPromises = pokemonType === 'all'
           ? response.data.results.map(p => axios.get(p.url).then(res => res.data))
           : response.data.pokemon.map(p => axios.get(p.pokemon.url).then(res => res.data));
 
-        Promise.all(pokemons)
-          .then(pokemons => setPokemonList(pokemons))
+        Promise.all(fetchPromises)
+          .then(pokemons => {
+            if (selectedGenerations.length > 0) {
+              const filteredPokemons = pokemons.filter(pokemon =>
+                selectedGenerations.includes(pokemon.generation.name)
+              );
+              setPokemonList(filteredPokemons);
+            } else {
+              setPokemonList(pokemons);
+            }
+          })
           .catch(error => console.error('Error fetching Pokémon details:', error));
       })
       .catch(error => console.error('Error fetching Pokémon data:', error));
-  }, [pokemonType]);
+  }, [pokemonType, selectedGenerations]);
 
   const addToTeam = (pokemon) => {
     if (team.length < 6) {
-      setTeam([pokemon, ...team]); // The selected Pokémon go to the top of the page
+      setTeam([pokemon, ...team]);
     } else {
       alert('You can only add up to 6 Pokémon to your team.');
     }
   };
 
   return (
-    <div>
+    <div className="app">
       <Header />
       <TypeButtons
         types={types}
@@ -54,9 +70,14 @@ function App() {
         buttonClassName="custom-button"
         containerClassName="custom-container"
       />
-      <div>
+      <GenerationFilter
+        generations={generations}
+        selectedGenerations={selectedGenerations}
+        setSelectedGenerations={setSelectedGenerations}
+      />
+      <div className="team">
         <h2>My Team</h2>
-        <ul>
+        <ul className="team-list">
           {team.map((pokemon, index) => (
             <li key={index}>
               <img src={pokemon.sprites.front_default} alt={pokemon.name} />
